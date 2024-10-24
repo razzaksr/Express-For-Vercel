@@ -1,1 +1,4 @@
 node_modules
+
+# using concurrently package in express we can run both express and react
+# "start": "concurrently \"cd app-ui && npm run build\" \"node index.js\"",

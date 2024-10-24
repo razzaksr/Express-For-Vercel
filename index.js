@@ -1,8 +1,14 @@
 const express = require('express')
+const cors = require('cors')
+const path = require('path');
+
 
 const exp=express()
+exp.use(cors())
 
-exp.get('/',(req,res)=>{
+exp.use(express.static(path.join(__dirname, '/app-ui/build')));
+
+exp.get('/api/',(req,res)=>{
     res.send({"hai":"Hello"})
 })
 
