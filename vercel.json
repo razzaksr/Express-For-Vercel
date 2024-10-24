@@ -3,14 +3,20 @@
     "builds": [
      {
       "src": "index.js",
-      "use": "@vercel/node",
-      "config": { "includeFiles": ["dist/**"] }
+      "use": "@vercel/node"
+     },
+     {
+        "src": "app-ui/package.json",
+        "use": "@vercel/static-build",
+        "config": { "distDir":"build" }
      }
     ],
     "routes": [
      {
-      "src": "/(.*)",
-      "dest": "index.js"
+      "src": "/api/(.*)","dest": "index.js"
+     },
+     {
+        "src": "/(.*)","dest": "app-ui/build/$1"
      }
     ]
    }
