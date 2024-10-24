@@ -7,7 +7,6 @@ const exp=express()
 exp.use(cors())
 
 exp.use(express.static(path.join(__dirname, '/app-ui/build')));
-
 exp.get('/api/',(req,res)=>{
     res.send({"hai":"Hello"})
 })

@@ -16,7 +16,7 @@
       "src": "/api/(.*)","dest": "index.js"
      },
      {
-        "src": "/(.*)","dest": "app-ui/build/index.html"
+        "src": "/(.*)","dest": "app-ui/build"
      }
     ]
    }
