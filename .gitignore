@@ -2,3 +2,46 @@ node_modules
 
 # using concurrently package in express we can run both express and react
 # "start": "concurrently \"cd app-ui && npm run build\" \"node index.js\"",
+
+
+# new vercel
+# {
+#     "version": 2,
+#     "builds": [
+#      {
+#       "src": "index.js",
+#       "use": "@vercel/node"
+#      },
+#      {
+#         "src": "app-ui/package.json",
+#         "use": "@vercel/static-build",
+#         "config": { "distDir":"build" }
+#      }
+#     ],
+#     "routes": [
+#      {
+#       "src": "/api/(.*)","dest": "index.js"
+#      },
+#      {
+#         "src": "/(.*)","dest": "app-ui/build"
+#      }
+#     ]
+#    }
+
+
+# {
+#     "version": 2,
+#     "builds": [
+#      {
+#       "src": "index.js",
+#       "use": "@vercel/node",
+#       "config": { "includeFiles": ["dist/**"] }
+#      }
+#     ],
+#     "routes": [
+#      {
+#       "src": "/(.*)",
+#       "dest": "index.js"
+#      }
+#     ]
+#    }
